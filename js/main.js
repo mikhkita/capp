@@ -15,6 +15,55 @@ $(document).ready(function(){
     $(window).resize(resize);
     resize();
 
+    var globPos = 0;
+    $("body").mousemove(function(e){
+        globPos = e.pageX;
+    });
+
+    custom["bindGirl"] = function(){
+        setPos(getPos());
+
+        setTimeout(function(){
+            $(".b-white-line").removeClass("transition");
+        },500);
+
+        $("body").mousemove(function(e){
+            var k = getPos(e);          
+
+            setPos(k);
+        });
+    }
+
+    function getPos(e){
+        var offset = 30, //В процентах
+            curPos = (typeof e != "undefined")?e.pageX:globPos,
+            offset_pix = myWidth/100*offset;
+            percent = (curPos-offset_pix)/(myWidth-offset_pix*2);
+
+
+            console.log(curPos);
+        percent = ( percent < -3 )?-3:percent;
+        percent = ( percent > 3 )?3:percent;  
+
+        return percent;
+    }
+
+    function setPos(k){
+        var width = $(".b-layers").width();
+
+        $(".b-white-line").css({
+            "left" : (k*100)+"%"
+        });
+
+        $(".b-capp").css({
+            "width" : width*k
+        });
+
+        $(".b-bracket").css({
+            "width" : width - width*k
+        });
+    }
+
     $.fn.placeholder = function() {
         if(typeof document.createElement("input").placeholder == 'undefined') {
             $('[placeholder]').focus(function() {
