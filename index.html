@@ -8,6 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css">
 
@@ -32,7 +33,7 @@
 		<div class="b-wide-block">
 			<div class="b-block clearfix">
 				<div class="b-header left">
-					<a href="#" class="b-logo left"></a>
+					<a href="http://cosmodent.su/" class="b-logo left"></a>
 					<div class="b-phone-cont right">
 						<h3>+7 (3822) 20-23-32</h3>
 						<a href="#b-callback" class="fancy">Заказать звонок</a>
@@ -51,18 +52,18 @@
 		<div class="b-wide-block">
 			<div class="b-block">
 				<ul class="b-reasons clearfix">
-					<li class="b-reason left">
+					<li class="b-reason left anim fadeDown" data-anim="fadeDown">
 						<div class="finger"><!--<img src="./images/finger.png">--></div>
 						<h4>Просто</h4>
 						<p>Вы самостоятельно меняете наборы капп каждую неделю, не тратя время на посещение врача</p>
 					</li>				
-					<li class="b-reason left">
-						<div><img src="./images/tip1.png"></div>
+					<li class="b-reason left anim fadeDown" data-anim="fadeDown">
+						<div class="clever"></div>
 						<h4>Комфортно</h4>
 						<p>Каппы можно снимать в любой момент, например для приема пищи и во время чистки зубов.</p>
 					</li>
-					<li class="b-reason left">
-						<div><img src="./images/tip3.png"></div>
+					<li class="b-reason left anim fadeDown" data-anim="fadeDown">
+						<div class="glass"></div>
 						<h4>Незаметно</h4>
 						<p>Каппы «Инвизилайн» изготавливаются из прозрачных материалов и практически не видны на зубах.</p>
 					</li>
@@ -74,7 +75,7 @@
 		<div class="b-wide-block">
 			<div class="b-block clearfix">
 				<div class="b-2-cont">
-					<div class="teeth left"></div>
+					<div class="teeth left fadeLeft anim" data-anim="fadeLeft" ></div>
 					<div class="wtf right">
 						<h2>Что же такое «Инвизилайн»?</h2>
 						<div class="descr">
@@ -90,26 +91,31 @@
 	<div class="b b-first">
 		<div class="b-wide-block">
 			<div class="b-block clearfix">
-				<div class="lavr left">
+				<div class="lavr left scaleOut anim" data-anim="scaleOut" data-delay="500" data-cont=".b-first">
 					<p>1</p>
 					<img src="./images/lavr.png">
 				</div>			
-				<div class="lavr-text right">
+				<div class="lavr-text right fadeRight anim" data-anim="fadeRight" data-cont=".b-first">
 					<h4>Единственные в области</h4>
 					<p>Космодент - единственная стоматологическая клиника в Томской области, осуществляющая исправление прикуса с помощью элайнеров «Инвизилайн»</p>
 				</div>	
 			</div>
 		</div>
 	</div>
-	<div class="b-4">
+	<div class="b-4" data-offset="500">
 		<div class="b-4 b-wide-block">
 			<div class="b-block">
 				<h4>Однозначно лучше,<br>чем брекеты</h4>
 				<div class="transp-block clearfix">
 					<div class="t-b-content">
-						<div class="girl-terminator">
+						<div class="girl-terminator anim" data-anim="bindGirl" data-func="bindGirl" data-delay="500">
+							<div class="b-layers">
+								<div class="b-layer b-bracket"></div>
+								<div class="b-layer b-capp"></div>
+								<div class="b-white-line transition"></div>
+							</div>
 						</div>	
-						<div class="left-collumn left">					
+						<div class="left-collumn left fadeRight anim" data-anim="fadeRight" data-cont=".b-4">					
 							<h3>«Ивизилайн»</h3>
 							<ul class="mark">
 								<li>Каппы практически незаметны на зубах</li>
@@ -118,7 +124,7 @@
 								<li>Вы можете есть все,<br>что угодно</li>
 							</ul>
 						</div>
-						<div class="right-collumn right">
+						<div class="right-collumn right fadeLeft anim" data-anim="fadeLeft" data-cont=".b-4">
 							<h3>Брекеты</h3>
 							<ul class="mark">
 								<li>Состоят из металлических скобок и проволок </li>
