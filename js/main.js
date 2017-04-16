@@ -34,6 +34,36 @@ $(document).ready(function(){
         });
     }
 
+    $(".tooltip").each(function(){
+        $(this).qtip({
+            position: {
+                my: ( ($(this).hasClass("tooltip-left"))?'middle right':'middle left'),
+                at: ( ($(this).hasClass("tooltip-left"))?'middle left':'middle right'),
+                adjust: {
+                    x: ( ($(this).hasClass("tooltip-left"))?-15:15)
+                },
+                container: $(this).parents('.step')
+            },
+            style: {
+                classes: 'qtipFont qtipCustom qtip-light qtip-white '+( ($(this).hasClass("tooltip-left"))?'':'qtip-right')+' qtip-without-border',
+                tip: {
+                    width: 22, height: 11, border: 0
+                }
+            },
+            show: {
+                target: $(this).parents(".step"),
+                effect: function(offset) {
+                    $(this).fadeIn(300);
+                    TweenLite.to($(this), 0, { "scale" : 0.5, ease : Quad.easeOut } );
+                    TweenLite.to($(this), 0.3, { "scale" : 1, ease : Quad.easeOut } );
+                }
+            },
+            hide: {
+                target: $(this).parents(".step")
+            }
+        });
+    });
+
     function getPos(e){
         var offset = 30, //В процентах
             curPos = (typeof e != "undefined")?e.pageX:globPos,

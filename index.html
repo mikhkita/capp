@@ -9,6 +9,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css">
 
@@ -152,7 +153,7 @@
 					</div>
 					
 					<div class="b-img b-img-l one"></div>
-					<div class="marker">1</div>
+					<div class="marker tooltip" title="На первой консультации врач оценит состояние Ваших зубов и выяснит, какой результат Вы хотите получить.">1</div>
 				</div>
 				<div class="step">
 					<div class="conts right">
@@ -161,7 +162,7 @@
 						</div>						
 					</div>					
 					<div class="b-img b-img-r two"></div>
-					<div class="marker">2</div>
+					<div class="marker tooltip tooltip-left" title="С помощью цифровой системы iTero создается 3D-изображение Ваших зубов. Затем врач разрабатывает четкий план действий и определяет продолжительность лечения.">2</div>
 				</div>
 				<div class="step">
 					<div class="conts left">
@@ -170,7 +171,7 @@
 						</div>							
 					</div>				
 					<div class="b-img b-img-l three"></div>
-					<div class="marker">3</div>
+					<div class="marker tooltip" title="Вы просто забираете готовые каппы «Инвизилайн» домой и начинаете носить их, снимая только во время еды или перед чисткой зубов.">3</div>
 				</div>
 				<div class="step">
 					<div class="conts right">
@@ -179,7 +180,7 @@
 						</div>							
 					</div>				
 					<div class="b-img b-img-r four"></div>
-					<div class="marker">4</div>
+					<div class="marker tooltip tooltip-left" title="Примерно каждые две недели меняйте набор капп на новый, переходя на следующий этап лечения. Для контроля процесса лечения, необходимо несколько раз посетить врача.">4</div>
 				</div>
 				<div class="step">
 					<div class="conts left">
@@ -188,7 +189,7 @@
 						</div>						
 					</div>					
 					<div class="b-img b-img-l five"></div>
-					<div class="marker">5</div>
+					<div class="marker tooltip" title="Полное время лечения каппами «Инвизилайн» может варьироваться от 6 до 24 месяцев, но обычно новой и красивой улыбкой можно насладиться уже через год!">5</div>
 				</div>
 			</div>
 		</div>
@@ -205,6 +206,7 @@
 				            <input type="text" class="inp-phone left" name="phone" placeholder="Телефон" required>
 				            <input type="hidden" name="subject" value="Бесплатная консультация"/>
 				            <a href="#" type="submit" class="btn btn-gray ajax left" onclick="$('#b-form-1').submit(); return false;">Отправить</a>
+				            <a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 				        </form>
 					</div>
 				</div>
@@ -274,6 +276,8 @@
 <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/KitAnimate.js"></script>
+<script type="text/javascript" src="js/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
 <script type="text/javascript" src="js/device.js"></script>
 <script type="text/javascript" src="js/KitSend.js"></script>
 <script type="text/javascript" src="js/main.js"></script>

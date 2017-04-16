@@ -50,7 +50,7 @@ body {
 	min-width: 1000px;
 	text-align: center;
 	font-family: 'Roboto-Regular';
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 	-webkit-text-size-adjust: none;
 	color: #472275;
 }
@@ -386,7 +386,7 @@ input.error,textarea.error{
 .b-first {
 }
 	.b-wide-block {
-		background-image: url('../images/back-3.jpg');
+		background-image: url('../images/dark-back.jpg');
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
 	}
@@ -432,7 +432,7 @@ input.error,textarea.error{
 }
 	.b-3 .b-wide-block {
 			background-position: 50% 50%;
-			background-image: url('../images/back-3.jpg');
+			background-image: url('../images/dark-back.jpg');
 			height: 1100px;
 			background-repeat: repeat-y;
 	}
@@ -455,6 +455,9 @@ input.error,textarea.error{
 						height: 101px;
 						margin-bottom: 30px;
 						position: relative;						
+					}
+					.step:hover{
+						cursor: default;
 					}
 						.conts {
 								
@@ -497,17 +500,21 @@ input.error,textarea.error{
 							position: absolute;
 							left: 50%;
 							margin-left: -30px;
-							border: 3px solid #ffffff;
+							border: 4px solid #ffffff;
 							border-radius: 50%;
 							width: 60px;
 							height: 60px;
-							font-family: "RobotoSlab-Regular";
+							font-family: "RobotoSlab-Bold";
 							font-size: 34px;
 							color: #ffffff;
-							line-height: 54px;
+							line-height: 50px;
 							top: 20%;
 							box-sizing: border-box;
-						}		
+						}	
+						.step:hover .marker{
+							color: #f1bd68;
+							border-color: #f1bd68;
+						}	
 						.step:nth-child(5) .marker {							
 							padding-right: 3px;
 						}
@@ -698,8 +705,21 @@ input.error,textarea.error{
 				margin: 0 auto;
 				margin-top: -148px;
 				z-index: 10;
-				box-shadow: 0px 50px 100px 0px rgba(109,109,109,0.2);
+				/*box-shadow: 0px 50px 100px 0px rgba(109,109,109,0.2);*/
 			}
+				.forma:after{
+					position: absolute;
+					content: "s";
+					font-size: 0px;
+					width: 798px;
+					height: 111px;
+					left: 50%;
+					margin-left: -399px;
+					bottom: -115px;
+					background-position: 50% 50%;
+					background-repeat: no-repeat;
+					background-image: url('../images/shadow.png');
+				}
 				.forma p {
 					font-family: "Roboto-Regular";
 					font-size: 20px;
@@ -815,7 +835,7 @@ input.error,textarea.error{
 }
 	.footer .b-wide-block {
 		background-position: 50% 50%;
-		background-image: url('../images/back-3.jpg');
+		background-image: url('../images/dark-back.jpg');
 		min-height: 193px;
 		color: #ffffff;
 	}
@@ -962,6 +982,70 @@ input.error,textarea.error{
 				cursor: pointer;
 				opacity: 1;
 			}
+.qtip-without-border{
+	border: none;
+}
+.qtip-light{
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-o-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+}
+.qtip-light.qtipCustomBrown{
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-o-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+.qtipCustom.qtip-white{
+	border-color: #FFF !important;
+	-webkit-transform-origin: 100% 50%;
+	-moz-transform-origin: 100% 50%;
+	-o-transform-origin: 100% 50%;
+	-ms-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+}
+.qtipCustom.qtip-right{
+	border-color: #FFF !important;
+	-webkit-transform-origin: 0% 50%;
+	-moz-transform-origin: 0% 50%;
+	-o-transform-origin: 0% 50%;
+	-ms-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+}
+.qtipCustom.qtip-white .qtip-content{
+	background-color: #FFF;
+}
+.qtipCustom{
+	border-color: #fff !important;
+}
+.qtipCustom .qtip-content{
+	font-size: 16px;
+	background-color: #fff;
+	font-weight: normal;
+	padding: 18px 26px;
+	line-height: 24px;
+	color: #474747;
+	width: 370px;
+}
+.qtip{
+	max-width: 430px;
+}
+
+.qtipCustomWhite .qtip-content{
+	background-color: #fff;
+}
+.qtipCustomBrown{
+	border-color: #483434 !important;
+}
+.qtipCustomBrown .qtip-content{
+	background-color: #483434;
+	color: #fff;
+	font-size: 15px;
+	padding: 14px 20px; 
+}
 input::-webkit-input-placeholder {
 	color: #b1b1b1;
 }
