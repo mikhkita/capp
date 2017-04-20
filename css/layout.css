@@ -47,7 +47,7 @@ body {
 	background-position: 50% 50%;
 	background-size: cover;
 	background-image: url('../images/background.jpg');
-	min-width: 1000px;
+	min-width: 1160px;
 	text-align: center;
 	font-family: 'Roboto-Regular';
 	/*overflow-x: hidden;*/
@@ -263,7 +263,8 @@ input.error,textarea.error{
 				margin-left: 23px;
 				margin-bottom: 76px;
 			}	
-.b-2 { 	
+.b-2 {
+	overflow: hidden;
 	}
 	.b-2 .b-wide-block {
 			background-position: 50% 50%;
@@ -321,12 +322,16 @@ input.error,textarea.error{
 		height: 590px;
 		z-index: 10;		
 	}
-		.b-block {	
+		.b-11 .b-block {	
+			position: relative;
 		}
 			.b-reasons {	
-				text-align: center;	
+				text-align: center;
 				display: inline-block;
-				margin-top: 100px;
+				width: 1000px;
+				position: absolute;
+				left: 0px;
+				top: 100px;
 				}
 			.b-reason {
 				display: inline-block;
@@ -383,8 +388,7 @@ input.error,textarea.error{
 					width: 136px; 
 					height: 88px;
 				}
-.b-first {
-}
+.b-first {overflow: hidden;}
 	.b-wide-block {
 		background-image: url('../images/dark-back.jpg');
 		background-position: 50% 50%;
@@ -692,7 +696,7 @@ input.error,textarea.error{
 
 	}
 		.float .b-wide-block .b-block {
-			width: 820px;
+			width: 828px;
 		}
 			.forma {
 				background-position: 50% 50%;
@@ -719,6 +723,9 @@ input.error,textarea.error{
 					background-position: 50% 50%;
 					background-repeat: no-repeat;
 					background-image: url('../images/shadow.png');
+				}
+				.forma.b-popup:after{
+					display: none;
 				}
 				.forma p {
 					font-family: "Roboto-Regular";
@@ -774,7 +781,7 @@ input.error,textarea.error{
 				box-shadow: inset 0px 0px 0px 4px #FFF;
 			}
 			.forma.b-popup.b-thanks{
-				width: 550px;
+				width: 560px;
 				padding: 24px 50px;
 			}
 				.forma.b-popup.b-thanks p{

@@ -1,4 +1,5 @@
 $(document).ready(function(){	
+    var globPos = 0;
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
             myWidth = window.innerWidth;
@@ -11,28 +12,53 @@ $(document).ready(function(){
             myWidth = document.body.clientWidth;
             myHeight = document.body.clientHeight;
         }
+        // if( device.mobile() ){
+            globPos = myWidth/2;          
+        // }else
     }
     $(window).resize(resize);
     resize();
 
-    var globPos = 0;
-    $("body").mousemove(function(e){
-        globPos = e.pageX;
-    });
+    var image = new Image();
+    image.src = 'images/back.jpg';
 
-    custom["bindGirl"] = function(){
-        setPos(getPos());
+    window.addEventListener("orientationchange", resize, false);
 
-        setTimeout(function(){
-            $(".b-white-line").removeClass("transition");
-        },500);
+    if( device.mobile() ){
+        $(".b-white-line").removeClass("transition");
+        $(".left-collumn").removeClass("fadeRight");
+        $(".right-collumn").removeClass("fadeLeft");
 
-        $("body").mousemove(function(e){
-            var k = getPos(e);          
+        document.addEventListener('touchmove', function(e) {
+            resize();
+            var touch = e.touches[0];
+            var k = getPos(touch);          
 
             setPos(k);
+        }, false);
+    }else{
+        $("body").mousemove(function(e){
+            globPos = e.pageX;
         });
+
+        custom["bindGirl"] = function(){
+            setPos(getPos());
+
+            setTimeout(function(){
+                $(".b-white-line").removeClass("transition");
+                $(".left-collumn").removeClass("fadeRight");
+                $(".right-collumn").removeClass("fadeLeft");
+            },500);
+
+            $("body").mousemove(function(e){
+                var k = getPos(e);          
+
+                setPos(k);
+            });
+        }
     }
+
+    
 
     $(".tooltip").each(function(){
         $(this).qtip({
@@ -71,15 +97,16 @@ $(document).ready(function(){
             percent = (curPos-offset_pix)/(myWidth-offset_pix*2);
 
 
-            console.log(curPos);
-        percent = ( percent < -3 )?-3:percent;
+            // console.log(curPos);
+        percent = ( percent < -2 )?-2:percent;
         percent = ( percent > 3 )?3:percent;  
 
         return percent;
     }
 
     function setPos(k){
-        var width = $(".b-layers").width();
+        var width = $(".b-layers").width(),
+            vector = (k-0.5)/1.5;
 
         $(".b-white-line").css({
             "left" : (k*100)+"%"
@@ -91,6 +118,14 @@ $(document).ready(function(){
 
         $(".b-bracket").css({
             "width" : width - width*k
+        });
+
+        $(".left-collumn").css({
+            "opacity" : ( vector < 0 )?(1+vector):(1)
+        });
+
+        $(".right-collumn").css({
+            "opacity" : ( vector > 0 )?(1-vector):(1)
         });
     }
 
