@@ -227,11 +227,11 @@ input.error,textarea.error{
 					.b-phone-cont a {
 						font-size: 17px;
 						color: #f1bc67;
-						text-decoration: underline;
 						font-family: "Roboto-Regular";
+						border-bottom: 1px dashed #f1bc67;
 					}
 						.b-phone-cont a:hover {
-							text-decoration: none;
+							border-bottom: 1px dashed transparent;
 						}
 			.b-consult {
 				text-align: left;
