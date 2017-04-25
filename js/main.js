@@ -1,4 +1,8 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+    $('.b-6-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 4000
+    });	
     var globPos = 0;
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
